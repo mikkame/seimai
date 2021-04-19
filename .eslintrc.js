@@ -28,6 +28,10 @@ module.exports = {
     }
   },
   rules: {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -39,5 +43,4 @@ module.exports = {
       }
     ]
   }
-
 };

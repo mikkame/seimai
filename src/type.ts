@@ -26,9 +26,9 @@ export type RawSkills = {
   '個人情報保護':RawAbility
   'スマートシティ':RawAbility
 }
-export type Skills = keyof  RawSkills
+export type SkillsType = keyof RawSkills
 export type RawRow = {
-  [key in Skills]: RawAbility
+  [key in SkillsType]: RawAbility
 } & {
   'No.': string
   'ふりがな': string
@@ -40,6 +40,11 @@ export type RawRow = {
   '__EMPTY_9': string
   '__EMPTY_10': string
 } & RawSkills
+
+export type DistAbility = {
+  canAdvice:boolean,
+  canLecture:boolean,
+}
 
 export type DistSkills = {
   'オープンデータ':DistAbility
@@ -69,13 +74,8 @@ export type DistSkills = {
   'スマートシティ':DistAbility
 }
 
-export type DistAbility = {
-  canAdvice:boolean,
-  canLecture:boolean,
-}
-
 export type DistRow = {
-  [key in Skills]: DistAbility
+  [key in SkillsType]: DistAbility
 } & {
   'No.':number
   'ふりがな':string,
@@ -86,8 +86,7 @@ export type DistRow = {
   'web_url':string,
 } & DistSkills
 
-
-export const Skills: Array<Skills> = [
+export const Skills: Array<SkillsType> = [
   'オープンデータ',
   'ＥＢＰＭ',
   'ＡＩ活用',
@@ -112,4 +111,4 @@ export const Skills: Array<Skills> = [
   '地域ビジネス',
   '観光',
   '個人情報保護',
-]
+];
